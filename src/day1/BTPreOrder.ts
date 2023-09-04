@@ -1,5 +1,3 @@
-import post_order_search from "./BTPostOrder"
-
 export default function pre_order_search(head: BinaryNode<number>): number[] {
 
   let result: number[] = []
