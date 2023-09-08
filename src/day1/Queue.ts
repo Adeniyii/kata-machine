@@ -1,18 +1,23 @@
 export default class Queue<T> {
-    public length: number;
+  public length: number;
 
-    
+  private queue: T[]
 
-    constructor() {
-    }
+  constructor() {
+    this.queue = []
+    this.length = this.queue.length
+  }
 
-    enqueue(item: T): void {
+  enqueue(item: T): void {
+    this.queue.push(item)
+    this.length++
+  }
+  deque(): T | undefined {
+    this.length--
+    return this.queue.shift()
 
-}
-    deque(): T | undefined {
-
-}
-    peek(): T | undefined {
-
-}
+  }
+  peek(): T | undefined {
+    return this.queue[0]
+  }
 }
