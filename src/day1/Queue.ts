@@ -13,6 +13,9 @@ export default class Queue<T> {
     this.length++
   }
   deque(): T | undefined {
+    if (this.length <= 0) {
+      return
+    }
     this.length--
     return this.queue.shift()
 

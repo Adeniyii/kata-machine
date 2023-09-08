@@ -22,14 +22,9 @@ export default class Trie {
         tmp.children[ascii_code] = node;
       }
 
-      if (i === item.length - 1) {
-        tmp.children[ascii_code]!.isTerminal = true;
-        break;
-      }
-
       tmp = tmp.children[ascii_code]!
     }
-
+    tmp.isTerminal = true;
   }
 
   delete(item: string): void {
